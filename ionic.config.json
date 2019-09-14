@@ -1,0 +1,7 @@
+{
+  "name": "My Lego Bank",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

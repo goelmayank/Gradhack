@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Account Summary 0</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-group *ngFor="let group of groupAcconts">
+      <ion-item-divider class="category" light>{{group.category}}</ion-item-divider>
+      <ion-item *ngFor="let account of group.accounts">      
+        <div class="accountname">{{account.accountName}}     
+        </div>
+        <div class="accountid" *ngIf="account.id">
+          {{account.id.substring(account.id.length - 5, account.id.length)}}
+        </div>
+        
+        <div *ngIf="account.balance" 
+          class="{{
+            (account.balance_amt >= 0) ? 'balance-positive' : 'balance-negative'
+          }}" 
+          item-right>
+          {{
+                (account.balance_amt >= 0) ? 
+                "$" + account.balance :
+                "-$" + account.balance.replace('-', '')             
+          }}       
+        </div>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

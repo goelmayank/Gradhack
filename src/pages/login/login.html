@@ -1,0 +1,25 @@
+<ion-content padding class="background" id="loginview" >
+  <div class="contentbox">
+    <img src="assets/imgs/sbanking_logo1.png" class="logo" />
+
+    <ion-card class="inputbox">
+      <ion-list class="inputlist">
+        <ion-item>
+          <ion-input type="number" #txtCard  placeholder="Card Number or Username" value="4536055024554601"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="password" #txtPassword placeholder="Password"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <button ion-button 
+      (click)='signOn()'
+      block ion-button 
+
+      color="logincolor" 
+      class="buttonlogin">
+      Sign in
+    </button>
+  </div>
+</ion-content>

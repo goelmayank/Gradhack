@@ -1,0 +1,25 @@
+<ion-menu [content]="content">
+  <ion-content class="menubackground">
+    <ion-list class="menulist">
+
+        <button 
+          menuClose 
+          ion-item
+          no-lines 
+          *ngFor="let p of pages" 
+          [class.menuitem]="!checkActive(p)" 
+          [class.activeHighlight]="checkActive(p)" 
+          (click)="openPage(p)">
+          <div  >
+            <img src={{p.icon}} /><span class="menuitemtext">{{p.title}}</span>
+          </div>
+        </button>
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
